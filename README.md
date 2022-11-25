@@ -3,6 +3,8 @@ Spocket Code Challenge
 
 # Description
 
+The app will create the customers for the payload received. The app will use the bulk insertion method for creating customers. App also has a scheduled worker that will complete the address information for the created customers that have missing address details. This worker will try 3 times to fetch address information for every customer that's persisted in the database. Also, to deal with the rate limit of external address API, the app first looks up addresses for provided zip code in the database and if it's not available there then the app hits the API for details. Address API is expected to restrict the app from making more than 500 requests, so we are only making this request in batches of 100 per time the worker is triggered. We will trigger the worker every 10 mins to avoid the rate limit as well. I tried on 50k requests, and its work fine for me. 
+
 The following are the endpoints that are supported
 - Endpoint to receive a list of customers data.
 - Will store the address for each customer after finding it.
