@@ -1,5 +1,5 @@
-# Poject Name
-Spocket CO
+# Project Name
+Spocket Code Challenge
 
 # Description
 
@@ -34,7 +34,7 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-* `ruby 3.1.2`
+* `ruby 3.1.0`
 * `rails 7.0.4`
 
 ### Installation
